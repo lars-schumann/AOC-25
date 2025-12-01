@@ -1,5 +1,5 @@
 {
-  description = "rust dev shell for yew";
+  description = "rust dev shell aoc 2025";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
