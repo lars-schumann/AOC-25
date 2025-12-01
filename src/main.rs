@@ -3,9 +3,9 @@
 #![allow(clippy::missing_panics_doc)]
 
 #[allow(dead_code)]
-mod d1;
+mod y25;
 
 fn main() {
-    d1::p1();
-    d1::p2();
+    y25::d1::p1();
+    y25::d1::p2();
 }
