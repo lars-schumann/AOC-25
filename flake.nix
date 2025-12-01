@@ -22,7 +22,6 @@
     {
       devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [
-          # Rust toolchain with the wasm32-unknown-unknown target
           rust-bin.nightly.latest.default
           rust-analyzer
           rustfmt
