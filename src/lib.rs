@@ -4,8 +4,3 @@
 
 #[allow(dead_code)]
 mod y25;
-
-fn main() {
-    y25::d2::p1();
-    y25::d2::p2();
-}
