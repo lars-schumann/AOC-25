@@ -5,7 +5,7 @@ pub fn parse_input(input: &str) -> Vec<Vec<u8>> {
         .collect()
 }
 pub fn p1() -> u128 {
-    let input = parse_input(include_str!("./p1.txt"));
+    let input = parse_input(include_str!("./input.txt"));
 
     let mut sum_of_maxes: u128 = 0;
 
@@ -34,7 +34,7 @@ pub fn p1() -> u128 {
 }
 
 pub fn p2() -> u128 {
-    let input = parse_input(include_str!("./p2.txt"));
+    let input = parse_input(include_str!("./input.txt"));
 
     let mut sum_of_maxes: u128 = 0;
 

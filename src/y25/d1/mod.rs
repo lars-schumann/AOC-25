@@ -1,5 +1,5 @@
 pub fn p1() {
-    let input = include_str!("./p1.txt");
+    let input = include_str!("./input.txt");
     let mut dial_location = 50;
     let mut zero_count = 0;
 
@@ -20,7 +20,7 @@ pub fn p1() {
 }
 
 pub fn p2() {
-    let input = include_str!("./p2.txt");
+    let input = include_str!("./input.txt");
     let mut dial_location = 50;
     let mut zero_count = 0;
 

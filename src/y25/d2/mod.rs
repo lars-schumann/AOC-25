@@ -9,7 +9,7 @@ fn parse_input(input: &str) -> impl Iterator<Item = RangeInclusive<u128>> {
 }
 
 pub fn p1() -> u128 {
-    let ranges = parse_input(include_str!("./p1.txt"));
+    let ranges = parse_input(include_str!("./input.txt"));
     let mut invalid_id_sum = 0;
 
     for range in ranges {
@@ -28,7 +28,7 @@ pub fn p1() -> u128 {
 }
 
 pub fn p1_iterator() -> u128 {
-    let ranges = parse_input(include_str!("./p1.txt"));
+    let ranges = parse_input(include_str!("./input.txt"));
 
     ranges
         .flat_map(|range| {
@@ -47,7 +47,7 @@ pub fn p1_iterator() -> u128 {
 }
 
 pub fn p2() -> u128 {
-    let ranges = parse_input(include_str!("./p2.txt"));
+    let ranges = parse_input(include_str!("./input.txt"));
     let mut invalid_id_sum: u128 = 0;
 
     for range in ranges {

@@ -89,7 +89,7 @@ fn count_surrounding_paper(grid: &Grid, coord: Coord) -> usize {
         .count()
 }
 pub fn p1() -> u128 {
-    let grid = parse_input(include_str!("./p1.txt"));
+    let grid = parse_input(include_str!("./input.txt"));
 
     let mut accessible_paper_count = 0;
 
@@ -103,7 +103,7 @@ pub fn p1() -> u128 {
 }
 
 pub fn p2() -> u128 {
-    let mut grid = parse_input(include_str!("./p2.txt"));
+    let mut grid = parse_input(include_str!("./input.txt"));
 
     let mut removed_count = 0;
 

@@ -1,5 +1,3 @@
-use std::{collections::HashSet, ops::Not};
-
 fn parse_input(input: &str) -> (Vec<std::ops::RangeInclusive<u128>>, Vec<u128>) {
     let lines: Vec<&str> = input.lines().collect();
 
@@ -20,7 +18,7 @@ fn parse_input(input: &str) -> (Vec<std::ops::RangeInclusive<u128>>, Vec<u128>) 
 }
 
 pub fn p1() -> usize {
-    let (fresh_ranges, ingredient_ids) = parse_input(include_str!("./p1.txt"));
+    let (fresh_ranges, ingredient_ids) = parse_input(include_str!("./input.txt"));
 
     ingredient_ids
         .iter()
@@ -29,7 +27,7 @@ pub fn p1() -> usize {
 }
 
 pub fn p2() -> u128 {
-    let (mut fresh_ranges, _ingredient_ids) = parse_input(include_str!("./p1.txt"));
+    let (mut fresh_ranges, _ingredient_ids) = parse_input(include_str!("./input.txt"));
 
     fresh_ranges.sort_by_key(|r| *r.start());
 
