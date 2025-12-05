@@ -1,4 +1,6 @@
-fn parse_input(input: &str) -> (Vec<std::ops::Range<u128>>, Vec<u128>) {
+use std::{collections::HashSet, ops::Not};
+
+fn parse_input(input: &str) -> (Vec<std::ops::RangeInclusive<u128>>, Vec<u128>) {
     let lines: Vec<&str> = input.lines().collect();
 
     let split = lines.iter().position(|l| l.is_empty()).unwrap();
@@ -6,7 +8,7 @@ fn parse_input(input: &str) -> (Vec<std::ops::Range<u128>>, Vec<u128>) {
     let fresh_ranges = lines[..split]
         .iter()
         .map(|l| l.split_once('-').unwrap())
-        .map(|(start, end)| start.parse().unwrap()..end.parse().unwrap())
+        .map(|(start, end)| start.parse().unwrap()..=end.parse().unwrap())
         .collect();
 
     let ingredient_ids = lines[split + 1..]
@@ -26,25 +28,36 @@ pub fn p1() -> usize {
         .count()
 }
 
-pub fn p2() -> usize {
-    let (fresh_ranges, _ingredient_ids) = parse_input(include_str!("./p1.txt"));
+pub fn p2() -> u128 {
+    let (mut fresh_ranges, _ingredient_ids) = parse_input(include_str!("./p1.txt"));
 
-    let max_last = fresh_ranges
-        .iter()
-        .max_by_key(|range| range.end)
-        .unwrap()
-        .end;
+    fresh_ranges.sort_by_key(|r| *r.start());
 
-    println!("{max_last}");
+    let mut total_counter = 0;
+    let mut iter = fresh_ranges.into_iter();
 
-    (0..max_last)
-        .filter(|id| {
-            if id.is_multiple_of(1_000_000) {
-                println!("{id}");
-            }
-            fresh_ranges.iter().any(|range| range.contains(id))
-        })
-        .count()
+    let first = iter.next().unwrap();
+
+    let mut cur_start = *first.start();
+    let mut cur_end = *first.end();
+
+    for r in iter {
+        let start = *r.start();
+        let end = *r.end();
+
+        if start <= cur_end + 1 {
+            cur_end = cur_end.max(end);
+        } else {
+            total_counter += cur_end - cur_start + 1;
+
+            cur_start = start;
+            cur_end = end;
+        }
+    }
+
+    total_counter += cur_end - cur_start + 1;
+
+    total_counter
 }
 
 #[cfg(test)]
@@ -58,6 +71,6 @@ mod tests {
 
     #[test]
     fn test_p2() {
-        assert_eq!(p2(), 0);
+        assert_eq!(p2(), 352_340_558_684_863);
     }
 }
