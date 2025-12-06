@@ -1,5 +1,5 @@
 {
-  description = "rust dev shell aoc 2025";
+  description = "rust dev shell aoc";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -42,7 +42,7 @@
         };
 
         shellHook = ''
-          export PS1="\[\e[1;33m\][AOC-25]\[\e[0m\] $PS1"
+          export PS1="\[\e[1;33m\][aoc]\[\e[0m\] $PS1"
         '';
       };
     };
