@@ -50,7 +50,7 @@ fn p1(input: &str) -> u64 {
     running_total
 }
 
-fn p2(input: &str) -> () {
+fn p2(input: &str) -> u64 {
     let input = parse_input(input);
     todo!()
 }
@@ -61,11 +61,11 @@ mod tests {
 
     #[test]
     fn test_p1() {
-        assert_eq!(p1(include_str!("./input.txt")), 0);
+        assert_eq!(p1(include_str!("./input.txt")), 4_719_804_927_602);
     }
 
     #[test]
     fn test_p2() {
-        assert_eq!(p2(include_str!("./input.txt")), ());
+        assert_eq!(p2(include_str!("./input.txt")), 0);
     }
 }

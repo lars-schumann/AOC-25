@@ -88,8 +88,8 @@ fn count_surrounding_paper(grid: &Grid, coord: Coord) -> usize {
         .filter(|c| grid[**c].is_some())
         .count()
 }
-pub fn p1() -> u128 {
-    let grid = parse_input(include_str!("./input.txt"));
+pub fn p1(input: &str) -> u128 {
+    let grid = parse_input(input);
 
     let mut accessible_paper_count = 0;
 
@@ -102,8 +102,8 @@ pub fn p1() -> u128 {
     accessible_paper_count
 }
 
-pub fn p2() -> u128 {
-    let mut grid = parse_input(include_str!("./input.txt"));
+pub fn p2(input: &str) -> u128 {
+    let mut grid = parse_input(input);
 
     let mut removed_count = 0;
 
@@ -130,11 +130,11 @@ mod tests {
 
     #[test]
     fn test_p1() {
-        assert_eq!(p1(), 1397);
+        assert_eq!(p1(include_str!("./input.txt")), 1397);
     }
 
     #[test]
     fn test_p2() {
-        assert_eq!(p2(), 8758);
+        assert_eq!(p2(include_str!("./input.txt")), 8758);
     }
 }

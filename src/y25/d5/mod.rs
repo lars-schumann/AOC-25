@@ -17,8 +17,8 @@ fn parse_input(input: &str) -> (Vec<std::ops::RangeInclusive<u128>>, Vec<u128>) 
     (fresh_ranges, ingredient_ids)
 }
 
-pub fn p1() -> usize {
-    let (fresh_ranges, ingredient_ids) = parse_input(include_str!("./input.txt"));
+pub fn p1(input: &str) -> usize {
+    let (fresh_ranges, ingredient_ids) = parse_input(input);
 
     ingredient_ids
         .iter()
@@ -26,8 +26,8 @@ pub fn p1() -> usize {
         .count()
 }
 
-pub fn p2() -> u128 {
-    let (mut fresh_ranges, _ingredient_ids) = parse_input(include_str!("./input.txt"));
+pub fn p2(input: &str) -> u128 {
+    let (mut fresh_ranges, _ingredient_ids) = parse_input(input);
 
     fresh_ranges.sort_by_key(|r| *r.start());
 
@@ -64,11 +64,11 @@ mod tests {
 
     #[test]
     fn test_p1() {
-        assert_eq!(p1(), 701);
+        assert_eq!(p1(include_str!("./input.txt")), 701);
     }
 
     #[test]
     fn test_p2() {
-        assert_eq!(p2(), 352_340_558_684_863);
+        assert_eq!(p2(include_str!("./input.txt")), 352_340_558_684_863);
     }
 }

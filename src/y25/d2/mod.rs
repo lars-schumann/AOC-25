@@ -8,8 +8,8 @@ fn parse_input(input: &str) -> impl Iterator<Item = RangeInclusive<u128>> {
         .map(|r| r.0.parse::<u128>().unwrap()..=r.1.parse().unwrap())
 }
 
-pub fn p1() -> u128 {
-    let ranges = parse_input(include_str!("./input.txt"));
+pub fn p1(input: &str) -> u128 {
+    let ranges = parse_input(input);
     let mut invalid_id_sum = 0;
 
     for range in ranges {
@@ -27,8 +27,8 @@ pub fn p1() -> u128 {
     invalid_id_sum
 }
 
-pub fn p1_iterator() -> u128 {
-    let ranges = parse_input(include_str!("./input.txt"));
+pub fn p1_iterator(input: &str) -> u128 {
+    let ranges = parse_input(input);
 
     ranges
         .flat_map(|range| {
@@ -46,8 +46,8 @@ pub fn p1_iterator() -> u128 {
         .sum()
 }
 
-pub fn p2() -> u128 {
-    let ranges = parse_input(include_str!("./input.txt"));
+pub fn p2(input: &str) -> u128 {
+    let ranges = parse_input(input);
     let mut invalid_id_sum: u128 = 0;
 
     for range in ranges {
@@ -83,12 +83,12 @@ mod tests {
 
     #[test]
     fn test_p1() {
-        assert_eq!(p1(), 23_560_874_270);
-        assert_eq!(p1_iterator(), 23_560_874_270);
+        assert_eq!(p1(include_str!("./input.txt")), 23_560_874_270);
+        assert_eq!(p1_iterator(include_str!("./input.txt")), 23_560_874_270);
     }
 
     #[test]
     fn test_p2() {
-        assert_eq!(p2(), 44_143_124_633);
+        assert_eq!(p2(include_str!("./input.txt")), 44_143_124_633);
     }
 }

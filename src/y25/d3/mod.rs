@@ -4,8 +4,8 @@ pub fn parse_input(input: &str) -> Vec<Vec<u8>> {
         .map(|line| line.bytes().map(|c| c - 48).collect())
         .collect()
 }
-pub fn p1() -> u128 {
-    let input = parse_input(include_str!("./input.txt"));
+pub fn p1(input: &str) -> u128 {
+    let input = parse_input(input);
 
     let mut sum_of_maxes: u128 = 0;
 
@@ -33,8 +33,8 @@ pub fn p1() -> u128 {
     sum_of_maxes
 }
 
-pub fn p2() -> u128 {
-    let input = parse_input(include_str!("./input.txt"));
+pub fn p2(input: &str) -> u128 {
+    let input = parse_input(input);
 
     let mut sum_of_maxes: u128 = 0;
 
@@ -80,11 +80,11 @@ mod tests {
 
     #[test]
     fn test_p1() {
-        assert_eq!(p1(), 17_383);
+        assert_eq!(p1(include_str!("./input.txt")), 17_383);
     }
 
     #[test]
     fn test_p2() {
-        assert_eq!(p2(), 172_601_598_658_203);
+        assert_eq!(p2(include_str!("./input.txt")), 172_601_598_658_203);
     }
 }

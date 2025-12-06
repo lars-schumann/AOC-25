@@ -1,5 +1,4 @@
-pub fn p1() {
-    let input = include_str!("./input.txt");
+pub fn p1(input: &str) -> u64 {
     let mut dial_location = 50;
     let mut zero_count = 0;
 
@@ -16,11 +15,10 @@ pub fn p1() {
             zero_count += 1;
         }
     }
-    println!("{zero_count}");
+    zero_count
 }
 
-pub fn p2() {
-    let input = include_str!("./input.txt");
+pub fn p2(input: &str) -> u64 {
     let mut dial_location = 50;
     let mut zero_count = 0;
 
@@ -40,5 +38,20 @@ pub fn p2() {
             }
         }
     }
-    println!("{zero_count}");
+    zero_count
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_p1() {
+        assert_eq!(p1(include_str!("./input.txt")), 1123);
+    }
+
+    #[test]
+    fn test_p2() {
+        assert_eq!(p2(include_str!("./input.txt")), 6695);
+    }
 }
