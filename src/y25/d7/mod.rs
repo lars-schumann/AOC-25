@@ -51,7 +51,7 @@ fn p2(input: &[u8]) -> u128 {
         match b {
             b'S' => flat_grid.push(1),
             b'.' => flat_grid.push(0),
-            b'^' => flat_grid.push(u64::MAX),
+            b'^' => flat_grid.push(u64::MAX), //sentinel value :/
             b'\n' => { /*nothing */ }
             _ => panic!(),
         }
