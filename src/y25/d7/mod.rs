@@ -1,5 +1,3 @@
-use std::{u64, vec};
-
 fn p1(input: &[u8]) -> usize {
     let mut input = input.to_vec();
     input.pop();
@@ -107,6 +105,6 @@ mod tests {
 
     #[test]
     fn test_p2() {
-        assert_eq!(p2(include_bytes!("./input.txt")), 0);
+        assert_eq!(p2(include_bytes!("./input.txt")), 5_921_061_943_075);
     }
 }
