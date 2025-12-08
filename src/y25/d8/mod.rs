@@ -23,18 +23,6 @@ fn p1(input: &str) -> usize {
     let mut connected_nodes: Vec<Vec<usize>> = vec![];
 
     for edge in edges.iter().take(1000) {
-        // println!(
-        //     "{}: {},{},{} / {}: {},{},{} | dst: {}",
-        //     edge.0,
-        //     nodes[edge.0].0,
-        //     nodes[edge.0].1,
-        //     nodes[edge.0].2,
-        //     edge.1,
-        //     nodes[edge.1].0,
-        //     nodes[edge.1].1,
-        //     nodes[edge.1].2,
-        //     edge.2
-        // );
         match (
             connected_nodes.iter().position(|g| g.contains(&edge.0)),
             connected_nodes.iter().position(|g| g.contains(&edge.1)),
@@ -46,7 +34,7 @@ fn p1(input: &str) -> usize {
                 if e_0_g != e_1_g {
                     let temp = connected_nodes[e_1_g].clone();
                     connected_nodes[e_0_g].extend(temp);
-                    connected_nodes.remove(e_1_g);
+                    connected_nodes.swap_remove(e_1_g);
                 }
             }
         }
@@ -86,18 +74,6 @@ fn p2(input: &str) -> i64 {
     let mut connected_nodes: Vec<Vec<usize>> = vec![];
 
     for edge in edges {
-        println!(
-            "{}: {},{},{} / {}: {},{},{} | dst: {}",
-            edge.0,
-            nodes[edge.0].0,
-            nodes[edge.0].1,
-            nodes[edge.0].2,
-            edge.1,
-            nodes[edge.1].0,
-            nodes[edge.1].1,
-            nodes[edge.1].2,
-            edge.2
-        );
         match (
             connected_nodes.iter().position(|g| g.contains(&edge.0)),
             connected_nodes.iter().position(|g| g.contains(&edge.1)),
@@ -109,7 +85,7 @@ fn p2(input: &str) -> i64 {
                 if e_0_g != e_1_g {
                     let temp = connected_nodes[e_1_g].clone();
                     connected_nodes[e_0_g].extend(temp);
-                    connected_nodes.remove(e_1_g);
+                    connected_nodes.swap_remove(e_1_g);
                 }
             }
         }
