@@ -29,6 +29,8 @@
           clippy
           bacon
 
+          cargo-show-asm
+
           nixfmt
           nixd
 

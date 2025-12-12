@@ -1,35 +1,37 @@
-fn p1(input: &[u8]) -> i64 {
-    fn num_from_bytes(bytes: &[u8]) -> i64 {
-        let mut num: i64 = 0;
-        let mut multiplier = 1;
-        for b in bytes.iter().rev() {
-            num += i64::from(b - 48) * multiplier;
-            multiplier *= 10;
-        }
-        num
-    }
+#[allow(clippy::no_mangle_with_rust_abi)]
+#[unsafe(no_mangle)]
+pub fn run(input: &[u8]) -> u16 {
+    use std::simd::prelude::*;
 
     const LINE_WIDTH: usize = 25;
 
+    assert_eq!(25096, input.len());
+
     let relevant = &input[(16 * 6)..];
+
+    assert_eq!(25_000, relevant.len());
 
     let mut sum = 0;
 
     for i in 0..1000 {
         let s = i * LINE_WIDTH; //current line starting index
-        let w = num_from_bytes(&relevant[(s + 0)..(s + 2)]);
-        let h = num_from_bytes(&relevant[(s + 3)..(s + 5)]);
 
-        let n1 = num_from_bytes(&relevant[(s + 7)..(s + 9)]);
-        let n2 = num_from_bytes(&relevant[(s + 10)..(s + 12)]);
-        let n3 = num_from_bytes(&relevant[(s + 13)..(s + 15)]);
-        let n4 = num_from_bytes(&relevant[(s + 16)..(s + 18)]);
-        let n5 = num_from_bytes(&relevant[(s + 19)..(s + 21)]);
-        let n6 = num_from_bytes(&relevant[(s + 22)..(s + 24)]);
+        let mut line = u8x32::load_or_default(&relevant[s..]);
+        line -= u8x32::splat(b'0');
 
-        let block_count: i64 = [n1, n2, n3, n4, n5, n6].iter().sum();
+        let left_digits = simd_swizzle!(line, [0, 3, 7, 10, 13, 16, 19, 22]);
+        let right_digits = simd_swizzle!(line, [1, 4, 8, 11, 14, 17, 20, 23]);
 
-        if block_count <= (w / 3) * (h / 3) {
+        let all_parsed_numbers = left_digits * u8x8::splat(10) + right_digits;
+
+        let w = all_parsed_numbers[0];
+        let h = all_parsed_numbers[1];
+
+        let counts = simd_swizzle!(all_parsed_numbers, [2, 3, 4, 5, 6, 7]);
+        let counts_sum = counts.cast::<u16>().reduce_sum();
+
+        // why does this work instead of /3 /3 ? who knows
+        if counts_sum * 9 <= u16::from(w) * u16::from(h) {
             sum += 1;
         }
     }
@@ -43,6 +45,6 @@ mod tests {
 
     #[test]
     fn test_p1() {
-        assert_eq!(p1(include_bytes!("./input.txt")), 0);
+        assert_eq!(run(include_bytes!("./input.txt")), 536);
     }
 }
