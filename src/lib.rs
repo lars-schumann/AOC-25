@@ -6,7 +6,8 @@
     slice_split_once,
     iter_advance_by,
     trim_prefix_suffix,
-    portable_simd
+    portable_simd,
+    stmt_expr_attributes
 )]
 
 #[allow(dead_code)]
