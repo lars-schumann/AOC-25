@@ -12,6 +12,11 @@ pub fn run(input: &[u8]) -> u16 {
     const ZEROS: u8x32 = u8x32::splat(b'0');
     const TENS: u8x8 = u8x8::splat(10);
 
+    const MUL: Simd<u8, 32> = u8x32::from_array([
+        10, 1, 0, 10, 1, 0, 0, 10, 1, 0, 10, 1, 0, 10, 1, 0, 10, 1, 0, 10, 1, 0, 10, 1, 0, 0, 0, 0,
+        0, 0, 0, 0,
+    ]);
+
     unsafe {
         std::hint::assert_unchecked(25096 == input.len());
     }
@@ -30,22 +35,25 @@ pub fn run(input: &[u8]) -> u16 {
         |i| {
             let s = i * LINE_WIDTH; //current line starting index
 
-            let mut line = unsafe { relevant_start.add(s).cast::<u8x32>().read() };
+            #[allow(clippy::cast_ptr_alignment)]
+            let mut line = unsafe { relevant_start.add(s).cast::<u8x32>().read_unaligned() };
 
             line -= ZEROS;
 
-            let left_digits = simd_swizzle!(line, [0, 3, 7, 10, 13, 16, 19, 22]);
-            let right_digits = simd_swizzle!(line, [1, 4, 8, 11, 14, 17, 20, 23]);
+            let all_nums_scaled = line * MUL;
 
-            let all_parsed_numbers = left_digits * TENS + right_digits;
+            let total_sum = all_nums_scaled.cast::<u16>().reduce_sum();
 
-            let counts = all_parsed_numbers.shift_elements_left::<2>(0);
-            let counts_sum = counts.cast::<u16>().reduce_sum();
-
-            let w = unsafe { all_parsed_numbers.as_array().get_unchecked(0) };
-            let h = unsafe { all_parsed_numbers.as_array().get_unchecked(1) };
+            let w = unsafe {
+                u16::from(*all_nums_scaled.as_array().get_unchecked(0))
+                    + u16::from(*all_nums_scaled.as_array().get_unchecked(1))
+            };
+            let h = unsafe {
+                u16::from(*all_nums_scaled.as_array().get_unchecked(3))
+                    + u16::from(*all_nums_scaled.as_array().get_unchecked(4))
+            };
             // why does this work instead of /3 /3 ? who knows
-            if counts_sum * 9 <= u16::from(*w) * u16::from(*h) {
+            if (total_sum - w - h) * 9 <= w * h {
                 sum += 1;
             }
         }
