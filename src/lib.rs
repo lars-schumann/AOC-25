@@ -1,4 +1,3 @@
-#![deny(clippy::pedantic, clippy::nursery)]
 #![allow(clippy::missing_errors_doc)]
 #![allow(clippy::missing_panics_doc)]
 #![feature(
@@ -7,7 +6,9 @@
     iter_advance_by,
     trim_prefix_suffix,
     portable_simd,
-    stmt_expr_attributes
+    stmt_expr_attributes,
+    const_trait_impl,
+    const_array
 )]
 
 #[allow(dead_code)]

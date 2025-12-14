@@ -1,1053 +1,186 @@
 #![feature(portable_simd, stmt_expr_attributes)]
-macro_rules! over_900 {
-    ($expr:expr) => {
-        $expr(0);
-        $expr(1);
-        $expr(2);
-        $expr(3);
-        $expr(4);
-        $expr(5);
-        $expr(6);
-        $expr(7);
-        $expr(8);
-        $expr(9);
-        $expr(10);
-        $expr(11);
-        $expr(12);
-        $expr(13);
-        $expr(14);
-        $expr(15);
-        $expr(16);
-        $expr(17);
-        $expr(18);
-        $expr(19);
-        $expr(20);
-        $expr(21);
-        $expr(22);
-        $expr(23);
-        $expr(24);
-        $expr(25);
-        $expr(26);
-        $expr(27);
-        $expr(28);
-        $expr(29);
-        $expr(30);
-        $expr(31);
-        $expr(32);
-        $expr(33);
-        $expr(34);
-        $expr(35);
-        $expr(36);
-        $expr(37);
-        $expr(38);
-        $expr(39);
-        $expr(40);
-        $expr(41);
-        /*$expr(42);*/
-        $expr(43);
-        $expr(44);
-        $expr(45);
-        $expr(46);
-        $expr(47);
-        $expr(48);
-        $expr(49);
-        $expr(50);
-        $expr(51);
-        $expr(52);
-        $expr(53);
-        $expr(54);
-        $expr(55);
-        $expr(56);
-        $expr(57);
-        $expr(58);
-        $expr(59);
-        $expr(60);
-        $expr(61);
-        $expr(62);
-        $expr(63);
-        $expr(64);
-        $expr(65);
-        $expr(66);
-        /*$expr(67);*/
-        $expr(68);
-        $expr(69);
-        $expr(70);
-        $expr(71);
-        $expr(72);
-        $expr(73);
-        $expr(74);
-        $expr(75);
-        $expr(76);
-        $expr(77);
-        $expr(78);
-        $expr(79);
-        $expr(80);
-        $expr(81);
-        $expr(82);
-        $expr(83);
-        $expr(84);
-        $expr(85);
-        $expr(86);
-        $expr(87);
-        $expr(88);
-        $expr(89);
-        /*$expr(90);*/
-        $expr(91);
-        $expr(92);
-        /*$expr(93);*/
-        $expr(94);
-        $expr(95);
-        $expr(96);
-        $expr(97);
-        $expr(98);
-        $expr(99);
-        $expr(100);
-        $expr(101);
-        $expr(102);
-        $expr(103);
-        $expr(104);
-        $expr(105);
-        $expr(106);
-        $expr(107);
-        $expr(108);
-        $expr(109);
-        $expr(110);
-        $expr(111);
-        $expr(112);
-        $expr(113);
-        $expr(114);
-        $expr(115);
-        $expr(116);
-        $expr(117);
-        $expr(118);
-        $expr(119);
-        $expr(120);
-        $expr(121);
-        $expr(122);
-        $expr(123);
-        $expr(124);
-        $expr(125);
-        $expr(126);
-        $expr(127);
-        $expr(128);
-        $expr(129);
-        $expr(130);
-        $expr(131);
-        $expr(132);
-        $expr(133);
-        $expr(134);
-        $expr(135);
-        $expr(136);
-        $expr(137);
-        $expr(138);
-        $expr(139);
-        $expr(140);
-        /*$expr(141);*/
-        /*$expr(142);*/
-        $expr(143);
-        $expr(144);
-        /*$expr(145);*/
-        $expr(146);
-        $expr(147);
-        $expr(148);
-        $expr(149);
-        $expr(150);
-        $expr(151);
-        $expr(152);
-        $expr(153);
-        $expr(154);
-        $expr(155);
-        $expr(156);
-        $expr(157);
-        $expr(158);
-        $expr(159);
-        $expr(160);
-        $expr(161);
-        $expr(162);
-        $expr(163);
-        $expr(164);
-        $expr(165);
-        $expr(166);
-        $expr(167);
-        $expr(168);
-        $expr(169);
-        $expr(170);
-        $expr(171);
-        $expr(172);
-        $expr(173);
-        $expr(174);
-        $expr(175);
-        $expr(176);
-        $expr(177);
-        $expr(178);
-        $expr(179);
-        $expr(180);
-        $expr(181);
-        $expr(182);
-        $expr(183);
-        /*$expr(184);*/
-        $expr(185);
-        $expr(186);
-        $expr(187);
-        /*$expr(188);*/
-        $expr(189);
-        $expr(190);
-        $expr(191);
-        $expr(192);
-        $expr(193);
-        $expr(194);
-        $expr(195);
-        $expr(196);
-        $expr(197);
-        $expr(198);
-        $expr(199);
-        $expr(200);
-        $expr(201);
-        /*$expr(202);*/
-        $expr(203);
-        $expr(204);
-        $expr(205);
-        $expr(206);
-        $expr(207);
-        $expr(208);
-        $expr(209);
-        $expr(210);
-        $expr(211);
-        $expr(212);
-        $expr(213);
-        $expr(214);
-        $expr(215);
-        $expr(216);
-        $expr(217);
-        $expr(218);
-        $expr(219);
-        $expr(220);
-        $expr(221);
-        $expr(222);
-        $expr(223);
-        $expr(224);
-        $expr(225);
-        $expr(226);
-        $expr(227);
-        $expr(228);
-        $expr(229);
-        $expr(230);
-        $expr(231);
-        /*$expr(232);*/
-        $expr(233);
-        $expr(234);
-        $expr(235);
-        $expr(236);
-        /*$expr(237);*/
-        $expr(238);
-        $expr(239);
-        $expr(240);
-        $expr(241);
-        $expr(242);
-        $expr(243);
-        $expr(244);
-        $expr(245);
-        $expr(246);
-        $expr(247);
-        /*$expr(248);*/
-        $expr(249);
-        $expr(250);
-        $expr(251);
-        $expr(252);
-        $expr(253);
-        $expr(254);
-        $expr(255);
-        $expr(256);
-        $expr(257);
-        $expr(258);
-        $expr(259);
-        $expr(260);
-        /*$expr(261);*/
-        $expr(262);
-        $expr(263);
-        $expr(264);
-        $expr(265);
-        $expr(266);
-        $expr(267);
-        $expr(268);
-        $expr(269);
-        $expr(270);
-        $expr(271);
-        $expr(272);
-        $expr(273);
-        $expr(274);
-        $expr(275);
-        $expr(276);
-        $expr(277);
-        $expr(278);
-        $expr(279);
-        $expr(280);
-        $expr(281);
-        $expr(282);
-        $expr(283);
-        $expr(284);
-        $expr(285);
-        $expr(286);
-        $expr(287);
-        $expr(288);
-        $expr(289);
-        $expr(290);
-        $expr(291);
-        $expr(292);
-        $expr(293);
-        $expr(294);
-        $expr(295);
-        $expr(296);
-        $expr(297);
-        $expr(298);
-        $expr(299);
-        $expr(300);
-        $expr(301);
-        $expr(302);
-        $expr(303);
-        $expr(304);
-        $expr(305);
-        $expr(306);
-        $expr(307);
-        $expr(308);
-        $expr(309);
-        $expr(310);
-        $expr(311);
-        $expr(312);
-        $expr(313);
-        /*$expr(314);*/
-        $expr(315);
-        $expr(316);
-        $expr(317);
-        $expr(318);
-        /*$expr(319);*/
-        $expr(320);
-        $expr(321);
-        $expr(322);
-        $expr(323);
-        $expr(324);
-        $expr(325);
-        $expr(326);
-        $expr(327);
-        $expr(328);
-        $expr(329);
-        $expr(330);
-        $expr(331);
-        $expr(332);
-        $expr(333);
-        $expr(334);
-        $expr(335);
-        $expr(336);
-        $expr(337);
-        $expr(338);
-        $expr(339);
-        $expr(340);
-        $expr(341);
-        $expr(342);
-        $expr(343);
-        $expr(344);
-        $expr(345);
-        $expr(346);
-        /*$expr(347);*/
-        $expr(348);
-        $expr(349);
-        $expr(350);
-        $expr(351);
-        $expr(352);
-        $expr(353);
-        $expr(354);
-        $expr(355);
-        $expr(356);
-        $expr(357);
-        $expr(358);
-        $expr(359);
-        $expr(360);
-        $expr(361);
-        $expr(362);
-        $expr(363);
-        /*$expr(364);*/
-        $expr(365);
-        /*$expr(366);*/
-        $expr(367);
-        $expr(368);
-        $expr(369);
-        $expr(370);
-        $expr(371);
-        $expr(372);
-        $expr(373);
-        $expr(374);
-        /*$expr(375);*/
-        $expr(376);
-        $expr(377);
-        $expr(378);
-        $expr(379);
-        $expr(380);
-        $expr(381);
-        $expr(382);
-        $expr(383);
-        $expr(384);
-        /*$expr(385);*/
-        $expr(386);
-        $expr(387);
-        $expr(388);
-        $expr(389);
-        $expr(390);
-        $expr(391);
-        $expr(392);
-        $expr(393);
-        /*$expr(394);*/
-        $expr(395);
-        /*$expr(396);*/
-        $expr(397);
-        $expr(398);
-        $expr(399);
-        $expr(400);
-        $expr(401);
-        $expr(402);
-        $expr(403);
-        $expr(404);
-        $expr(405);
-        $expr(406);
-        $expr(407);
-        $expr(408);
-        $expr(409);
-        $expr(410);
-        $expr(411);
-        $expr(412);
-        $expr(413);
-        $expr(414);
-        $expr(415);
-        /*$expr(416);*/
-        $expr(417);
-        $expr(418);
-        $expr(419);
-        $expr(420);
-        $expr(421);
-        $expr(422);
-        $expr(423);
-        $expr(424);
-        $expr(425);
-        $expr(426);
-        $expr(427);
-        $expr(428);
-        /*$expr(429);*/
-        $expr(430);
-        $expr(431);
-        $expr(432);
-        $expr(433);
-        $expr(434);
-        $expr(435);
-        $expr(436);
-        $expr(437);
-        $expr(438);
-        $expr(439);
-        $expr(440);
-        $expr(441);
-        $expr(442);
-        $expr(443);
-        $expr(444);
-        $expr(445);
-        $expr(446);
-        $expr(447);
-        $expr(448);
-        $expr(449);
-        /*$expr(450);*/
-        $expr(451);
-        $expr(452);
-        $expr(453);
-        $expr(454);
-        $expr(455);
-        $expr(456);
-        $expr(457);
-        $expr(458);
-        $expr(459);
-        $expr(460);
-        $expr(461);
-        $expr(462);
-        $expr(463);
-        $expr(464);
-        $expr(465);
-        $expr(466);
-        $expr(467);
-        $expr(468);
-        /*$expr(469);*/
-        $expr(470);
-        $expr(471);
-        $expr(472);
-        $expr(473);
-        $expr(474);
-        $expr(475);
-        $expr(476);
-        $expr(477);
-        $expr(478);
-        $expr(479);
-        $expr(480);
-        /*$expr(481);*/
-        $expr(482);
-        $expr(483);
-        $expr(484);
-        $expr(485);
-        $expr(486);
-        $expr(487);
-        $expr(488);
-        $expr(489);
-        $expr(490);
-        $expr(491);
-        $expr(492);
-        $expr(493);
-        $expr(494);
-        $expr(495);
-        $expr(496);
-        $expr(497);
-        $expr(498);
-        $expr(499);
-        /*$expr(500);*/
-        $expr(501);
-        $expr(502);
-        $expr(503);
-        $expr(504);
-        $expr(505);
-        $expr(506);
-        $expr(507);
-        $expr(508);
-        $expr(509);
-        $expr(510);
-        $expr(511);
-        $expr(512);
-        /*$expr(513);*/
-        $expr(514);
-        $expr(515);
-        $expr(516);
-        $expr(517);
-        $expr(518);
-        /*$expr(519);*/
-        $expr(520);
-        $expr(521);
-        $expr(522);
-        $expr(523);
-        $expr(524);
-        $expr(525);
-        $expr(526);
-        /*$expr(527);*/
-        $expr(528);
-        $expr(529);
-        /*$expr(530);*/
-        $expr(531);
-        $expr(532);
-        $expr(533);
-        $expr(534);
-        $expr(535);
-        $expr(536);
-        $expr(537);
-        $expr(538);
-        $expr(539);
-        $expr(540);
-        $expr(541);
-        $expr(542);
-        /*$expr(543);*/
-        /*$expr(544);*/
-        $expr(545);
-        $expr(546);
-        $expr(547);
-        $expr(548);
-        $expr(549);
-        /*$expr(550);*/
-        $expr(551);
-        $expr(552);
-        $expr(553);
-        $expr(554);
-        $expr(555);
-        $expr(556);
-        $expr(557);
-        $expr(558);
-        $expr(559);
-        $expr(560);
-        $expr(561);
-        $expr(562);
-        $expr(563);
-        $expr(564);
-        $expr(565);
-        $expr(566);
-        $expr(567);
-        $expr(568);
-        $expr(569);
-        $expr(570);
-        $expr(571);
-        $expr(572);
-        $expr(573);
-        /*$expr(574);*/
-        $expr(575);
-        $expr(576);
-        $expr(577);
-        $expr(578);
-        $expr(579);
-        $expr(580);
-        $expr(581);
-        $expr(582);
-        $expr(583);
-        $expr(584);
-        $expr(585);
-        $expr(586);
-        $expr(587);
-        $expr(588);
-        $expr(589);
-        $expr(590);
-        $expr(591);
-        $expr(592);
-        $expr(593);
-        $expr(594);
-        $expr(595);
-        /*$expr(596);*/
-        $expr(597);
-        $expr(598);
-        $expr(599);
-        $expr(600);
-        $expr(601);
-        $expr(602);
-        $expr(603);
-        $expr(604);
-        $expr(605);
-        $expr(606);
-        $expr(607);
-        $expr(608);
-        $expr(609);
-        $expr(610);
-        $expr(611);
-        $expr(612);
-        $expr(613);
-        $expr(614);
-        $expr(615);
-        $expr(616);
-        $expr(617);
-        $expr(618);
-        $expr(619);
-        $expr(620);
-        $expr(621);
-        $expr(622);
-        $expr(623);
-        $expr(624);
-        $expr(625);
-        $expr(626);
-        $expr(627);
-        /*$expr(628);*/
-        $expr(629);
-        $expr(630);
-        $expr(631);
-        $expr(632);
-        $expr(633);
-        $expr(634);
-        $expr(635);
-        $expr(636);
-        $expr(637);
-        $expr(638);
-        $expr(639);
-        $expr(640);
-        $expr(641);
-        $expr(642);
-        $expr(643);
-        $expr(644);
-        $expr(645);
-        $expr(646);
-        $expr(647);
-        $expr(648);
-        /*$expr(649);*/
-        $expr(650);
-        $expr(651);
-        $expr(652);
-        $expr(653);
-        $expr(654);
-        $expr(655);
-        $expr(656);
-        $expr(657);
-        $expr(658);
-        $expr(659);
-        $expr(660);
-        $expr(661);
-        $expr(662);
-        $expr(663);
-        /*$expr(664);*/
-        $expr(665);
-        $expr(666);
-        $expr(667);
-        $expr(668);
-        $expr(669);
-        $expr(670);
-        $expr(671);
-        /*$expr(672);*/
-        $expr(673);
-        $expr(674);
-        $expr(675);
-        $expr(676);
-        $expr(677);
-        $expr(678);
-        $expr(679);
-        $expr(680);
-        $expr(681);
-        $expr(682);
-        $expr(683);
-        $expr(684);
-        $expr(685);
-        $expr(686);
-        $expr(687);
-        /*$expr(688);*/
-        $expr(689);
-        $expr(690);
-        $expr(691);
-        $expr(692);
-        $expr(693);
-        /*$expr(694);*/
-        $expr(695);
-        $expr(696);
-        $expr(697);
-        $expr(698);
-        $expr(699);
-        $expr(700);
-        $expr(701);
-        $expr(702);
-        $expr(703);
-        /*$expr(704);*/
-        $expr(705);
-        $expr(706);
-        $expr(707);
-        $expr(708);
-        $expr(709);
-        $expr(710);
-        /*$expr(711);*/
-        $expr(712);
-        $expr(713);
-        $expr(714);
-        $expr(715);
-        $expr(716);
-        $expr(717);
-        $expr(718);
-        $expr(719);
-        $expr(720);
-        $expr(721);
-        $expr(722);
-        $expr(723);
-        $expr(724);
-        $expr(725);
-        $expr(726);
-        $expr(727);
-        $expr(728);
-        $expr(729);
-        $expr(730);
-        /*$expr(731);*/
-        $expr(732);
-        $expr(733);
-        $expr(734);
-        $expr(735);
-        $expr(736);
-        $expr(737);
-        $expr(738);
-        $expr(739);
-        $expr(740);
-        $expr(741);
-        $expr(742);
-        $expr(743);
-        $expr(744);
-        $expr(745);
-        $expr(746);
-        $expr(747);
-        $expr(748);
-        $expr(749);
-        $expr(750);
-        $expr(751);
-        $expr(752);
-        $expr(753);
-        $expr(754);
-        $expr(755);
-        $expr(756);
-        $expr(757);
-        $expr(758);
-        $expr(759);
-        $expr(760);
-        /*$expr(761);*/
-        $expr(762);
-        $expr(763);
-        $expr(764);
-        $expr(765);
-        $expr(766);
-        $expr(767);
-        $expr(768);
-        $expr(769);
-        $expr(770);
-        $expr(771);
-        /*$expr(772);*/
-        $expr(773);
-        $expr(774);
-        $expr(775);
-        $expr(776);
-        $expr(777);
-        $expr(778);
-        $expr(779);
-        $expr(780);
-        $expr(781);
-        $expr(782);
-        $expr(783);
-        $expr(784);
-        $expr(785);
-        $expr(786);
-        $expr(787);
-        $expr(788);
-        $expr(789);
-        $expr(790);
-        $expr(791);
-        /*$expr(792);*/
-        $expr(793);
-        $expr(794);
-        $expr(795);
-        $expr(796);
-        $expr(797);
-        $expr(798);
-        $expr(799);
-        $expr(800);
-        $expr(801);
-        $expr(802);
-        $expr(803);
-        $expr(804);
-        $expr(805);
-        /*$expr(806);*/
-        $expr(807);
-        $expr(808);
-        $expr(809);
-        $expr(810);
-        /*$expr(811);*/
-        $expr(812);
-        $expr(813);
-        $expr(814);
-        $expr(815);
-        $expr(816);
-        $expr(817);
-        $expr(818);
-        $expr(819);
-        $expr(820);
-        $expr(821);
-        $expr(822);
-        $expr(823);
-        $expr(824);
-        $expr(825);
-        $expr(826);
-        $expr(827);
-        $expr(828);
-        $expr(829);
-        $expr(830);
-        $expr(831);
-        $expr(832);
-        $expr(833);
-        /*$expr(834);*/
-        $expr(835);
-        $expr(836);
-        $expr(837);
-        $expr(838);
-        $expr(839);
-        $expr(840);
-        $expr(841);
-        /*$expr(842);*/
-        $expr(843);
-        $expr(844);
-        $expr(845);
-        $expr(846);
-        $expr(847);
-        $expr(848);
-        $expr(849);
-        $expr(850);
-        $expr(851);
-        $expr(852);
-        $expr(853);
-        $expr(854);
-        $expr(855);
-        $expr(856);
-        $expr(857);
-        $expr(858);
-        $expr(859);
-        $expr(860);
-        $expr(861);
-        $expr(862);
-        $expr(863);
-        $expr(864);
-        $expr(865);
-        $expr(866);
-        $expr(867);
-        $expr(868);
-        /*$expr(869);*/
-        $expr(870);
-        $expr(871);
-        $expr(872);
-        $expr(873);
-        $expr(874);
-        /*$expr(875);*/
-        $expr(876);
-        /*$expr(877);*/
-        $expr(878);
-        $expr(879);
-        $expr(880);
-        $expr(881);
-        $expr(882);
-        $expr(883);
-        $expr(884);
-        $expr(885);
-        $expr(886);
-        $expr(887);
-        $expr(888);
-        $expr(889);
-        $expr(890);
-        $expr(891);
-        $expr(892);
-        $expr(893);
-        $expr(894);
-        $expr(895);
-        $expr(896);
-        $expr(897);
-        $expr(898);
-        $expr(899);
-        $expr(900);
-        $expr(901);
-        $expr(902);
-        $expr(903);
-        $expr(904);
-        $expr(905);
-        $expr(906);
-        $expr(907);
-        $expr(908);
-        $expr(909);
-        $expr(910);
-        $expr(911);
-        $expr(912);
-        $expr(913);
-        $expr(914);
-        $expr(915);
-        $expr(916);
-        $expr(917);
-        $expr(918);
-        $expr(919);
-        $expr(920);
-        $expr(921);
-        $expr(922);
-        $expr(923);
-        $expr(924);
-        $expr(925);
-        $expr(926);
-        $expr(927);
-        $expr(928);
-        $expr(929);
-        $expr(930);
-        $expr(931);
-        $expr(932);
-        $expr(933);
-        $expr(934);
-        $expr(935);
-        $expr(936);
-        $expr(937);
-        $expr(938);
-        /*$expr(939);*/
-        /*$expr(940);*/
-        $expr(941);
-        $expr(942);
-        $expr(943);
-        $expr(944);
-        $expr(945);
-        $expr(946);
-        $expr(947);
-        $expr(948);
-        $expr(949);
-        $expr(950);
-        $expr(951);
-        $expr(952);
-        $expr(953);
-        $expr(954);
-        $expr(955);
-        $expr(956);
-        $expr(957);
-        $expr(958);
-        $expr(959);
-        $expr(960);
-        $expr(961);
-        $expr(962);
-        $expr(963);
-        $expr(964);
-        $expr(965);
-        $expr(966);
-        $expr(967);
-        /*$expr(968);*/
-        $expr(969);
-        $expr(970);
-        $expr(971);
-        $expr(972);
-        $expr(973);
-        $expr(974);
-        $expr(975);
-        $expr(976);
-        $expr(977);
-        $expr(978);
-        $expr(979);
-        $expr(980);
-        $expr(981);
-        $expr(982);
-        $expr(983);
-        /*$expr(984);*/
-        $expr(985);
-        $expr(986);
-        $expr(987);
-        $expr(988);
-        $expr(989);
-        $expr(990);
-        $expr(991);
-        $expr(992);
-        $expr(993);
-        $expr(994);
-        $expr(995);
-        $expr(996);
-        $expr(997);
-        $expr(998);
-        $expr(999);
-    };
-}
+#![allow(unsafe_op_in_unsafe_fn)]
 
 #[allow(clippy::no_mangle_with_rust_abi)]
 #[unsafe(no_mangle)]
-pub fn run(input: &[u8]) -> u16 {
+pub unsafe fn run(input: &[u8]) -> u32 {
     use std::simd::prelude::*;
 
     const LINE_WIDTH: usize = 25;
-    const ZEROS: u8x32 = u8x32::splat(b'0');
-    const TENS: u8x8 = u8x8::splat(10);
 
-    #[rustfmt::skip]
-    const MUL: u8x32 = u8x32::from_array([ 10, 1, 0, 10, 1, 0, 0, 10, 1, 0, 10, 1, 0, 10, 1, 0, 10, 1, 0, 10, 1, 0, 10, 1, 0, 0, 0, 0, 0, 0, 0, 0, ]);
+    const fn by_25(value: usize) -> usize {
+        25 * value
+    }
+
+    const OFFSETS_64: usizex64 = Simd::from_array(core::array::from_fn(by_25));
+    const OFFSETS_32: usizex32 = Simd::from_array(core::array::from_fn(by_25));
+    const OFFSETS_8: usizex8 = Simd::from_array(core::array::from_fn(by_25));
+
+    const ZEROS_64: u8x64 = u8x64::splat(b'0');
+    const ZEROS_32: u8x32 = u8x32::splat(b'0');
+    const ZEROS_8: u8x8 = u8x8::splat(b'0');
+
+    const TENS_64: u16x64 = u16x64::splat(10);
+    const TENS_32: u16x32 = u16x32::splat(10);
+    const TENS_8: u16x8 = u16x8::splat(10);
+
+    const NINETIES_64: u16x64 = u16x64::splat(90);
+    const NINETIES_32: u16x32 = u16x32::splat(90);
+    const NINETIES_8: u16x8 = u16x8::splat(90);
 
     let relevant_start = unsafe { input.as_ptr().add(96) }; //16 * 6
 
-    let mut sum = 0;
+    #[inline(always)]
+    unsafe fn the_function_64(value: *const u8) -> u8x64 {
+        u8x64::gather_ptr(Simd::splat(value).wrapping_add(OFFSETS_64)) - ZEROS_64
+    }
 
-    over_900!(
-        #[inline(always)]
-        |i| {
-            let s = i * LINE_WIDTH; //current line starting index
+    #[inline(always)]
+    unsafe fn the_function_32(value: *const u8) -> u8x32 {
+        u8x32::gather_ptr(Simd::splat(value).wrapping_add(OFFSETS_32)) - ZEROS_32
+    }
 
-            #[allow(clippy::cast_ptr_alignment)]
-            let mut line = unsafe { relevant_start.add(s).cast::<u8x32>().read_unaligned() };
+    #[inline(always)]
+    unsafe fn the_function_8(value: *const u8) -> u8x8 {
+        u8x8::gather_ptr(Simd::splat(value).wrapping_add(OFFSETS_8)) - ZEROS_8
+    }
 
-            line -= ZEROS;
+    let mut sum: u32 = 0;
 
-            let all_nums_scaled = line * MUL;
+    for i in 0..=14 {
+        let s: *const u8 = relevant_start.add(i * 64 * LINE_WIDTH);
 
-            let total_sum = all_nums_scaled.cast::<u16>().reduce_sum();
+        let l_10_1: u16x64 = the_function_64(s).cast::<u16>();
 
-            let w = unsafe {
-                u16::from(*all_nums_scaled.as_array().get_unchecked(0))
-                    + u16::from(*all_nums_scaled.as_array().get_unchecked(1))
-            };
-            let h = unsafe {
-                u16::from(*all_nums_scaled.as_array().get_unchecked(3))
-                    + u16::from(*all_nums_scaled.as_array().get_unchecked(4))
-            };
-            // why does this work instead of /3 /3 ? who knows
-            if (total_sum - w - h) * 9 <= w * h {
-                sum += 1;
-            }
-        }
-    );
+        let s = s.add(1);
+        let l_1_1: u16x64 = the_function_64(s).cast::<u16>();
+
+        let s = s.add(2);
+
+        let l_10_2: u16x64 = the_function_64(s).cast::<u16>();
+        let s = s.add(1);
+        let l_1_2: u16x64 = the_function_64(s).cast::<u16>();
+
+        let s = s.add(3);
+
+        let r_1: u8x64 = the_function_64(s);
+        let s = s.add(3);
+        let r_2: u8x64 = the_function_64(s);
+        let s = s.add(3);
+        let r_3: u8x64 = the_function_64(s);
+        let s = s.add(3);
+        let r_4: u8x64 = the_function_64(s);
+        let s = s.add(3);
+        let r_5: u8x64 = the_function_64(s);
+        let s = s.add(3);
+        let r_6: u8x64 = the_function_64(s);
+
+        let r_sum = (r_1 + r_2 + r_3 + r_4 + r_5 + r_6).cast::<u16>() * NINETIES_64;
+
+        let l_sum = (l_10_1 * TENS_64 + l_1_1) * (l_10_2 * TENS_64 + l_1_2);
+
+        let less_than_thingy = l_sum.simd_ge(r_sum).to_bitmask();
+
+        let super_sum = less_than_thingy.count_ones();
+
+        // for i in 0..63 {
+        //     println!(
+        //         "{}{} {}{}: {} {} {} {} {} {} | {} {}",
+        //         l_10_1[i],
+        //         l_1_1[i],
+        //         l_10_2[i],
+        //         l_1_2[i],
+        //         r_1[i],
+        //         r_2[i],
+        //         r_3[i],
+        //         r_4[i],
+        //         r_5[i],
+        //         r_6[i],
+        //         l_sum[i],
+        //         r_sum[i]
+        //     );
+        // }
+
+        sum += super_sum;
+    }
+
+    //##########################################
+
+    let s: *const u8 = relevant_start.add(15 * 64 * LINE_WIDTH);
+
+    let l_10_1: u16x32 = the_function_32(s).cast::<u16>();
+
+    let s = s.add(1);
+    let l_1_1: u16x32 = the_function_32(s).cast::<u16>();
+
+    let s = s.add(2);
+
+    let l_10_2: u16x32 = the_function_32(s).cast::<u16>();
+    let s = s.add(1);
+    let l_1_2: u16x32 = the_function_32(s).cast::<u16>();
+
+    let s = s.add(3);
+
+    let r_1: u8x32 = the_function_32(s);
+    let s = s.add(3);
+    let r_2: u8x32 = the_function_32(s);
+    let s = s.add(3);
+    let r_3: u8x32 = the_function_32(s);
+    let s = s.add(3);
+    let r_4: u8x32 = the_function_32(s);
+    let s = s.add(3);
+    let r_5: u8x32 = the_function_32(s);
+    let s = s.add(3);
+    let r_6: u8x32 = the_function_32(s);
+
+    let r_sum = (r_1 + r_2 + r_3 + r_4 + r_5 + r_6).cast::<u16>() * NINETIES_32;
+
+    let l_sum = (l_10_1 * TENS_32 + l_1_1) * (l_10_2 * TENS_32 + l_1_2);
+
+    let less_than_thingy = l_sum.simd_ge(r_sum).to_bitmask();
+
+    let super_sum = less_than_thingy.count_ones();
+
+    sum += super_sum;
+
+    //##########################################
+
+    let s: *const u8 = relevant_start.add(15 * 64 * LINE_WIDTH + 32 * LINE_WIDTH);
+
+    let l_10_1: u16x8 = the_function_8(s).cast::<u16>();
+
+    let s = s.add(1);
+    let l_1_1: u16x8 = the_function_8(s).cast::<u16>();
+
+    let s = s.add(2);
+
+    let l_10_2: u16x8 = the_function_8(s).cast::<u16>();
+    let s = s.add(1);
+    let l_1_2: u16x8 = the_function_8(s).cast::<u16>();
+
+    let s = s.add(3);
+
+    let r_1: u8x8 = the_function_8(s);
+    let s = s.add(3);
+    let r_2: u8x8 = the_function_8(s);
+    let s = s.add(3);
+    let r_3: u8x8 = the_function_8(s);
+    let s = s.add(3);
+    let r_4: u8x8 = the_function_8(s);
+    let s = s.add(3);
+    let r_5: u8x8 = the_function_8(s);
+    let s = s.add(3);
+    let r_6: u8x8 = the_function_8(s);
+
+    let r_sum = (r_1 + r_2 + r_3 + r_4 + r_5 + r_6).cast::<u16>() * NINETIES_8;
+
+    let l_sum = (l_10_1 * TENS_8 + l_1_1) * (l_10_2 * TENS_8 + l_1_2);
+
+    let less_than_thingy = l_sum.simd_ge(r_sum).to_bitmask();
+
+    let super_sum = less_than_thingy.count_ones();
+
+    sum += super_sum;
 
     sum
 }
@@ -1057,6 +190,6 @@ mod tests {
 
     #[test]
     fn test_p1() {
-        assert_eq!(run(include_bytes!("./input.txt")), 536);
+        assert_eq!(unsafe { run(include_bytes!("./input.txt")) }, 536);
     }
 }
